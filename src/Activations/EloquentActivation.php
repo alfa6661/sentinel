@@ -20,7 +20,7 @@
 
 namespace Cartalyst\Sentinel\Activations;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class EloquentActivation extends Model implements ActivationInterface
 {
@@ -37,6 +37,10 @@ class EloquentActivation extends Model implements ActivationInterface
         'completed',
         'completed_at',
     ];
+
+    protected $attributes = array(
+       'completed' => false,
+    );
 
     /**
      * Get mutator for the "completed" attribute.
