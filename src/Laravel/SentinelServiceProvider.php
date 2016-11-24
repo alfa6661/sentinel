@@ -80,11 +80,11 @@ class SentinelServiceProvider extends ServiceProvider
         ], 'config');
 
         // Publish migrations
-        $migrations = realpath(__DIR__.'/../migrations');
+        // $migrations = realpath(__DIR__.'/../migrations');
 
-        $this->publishes([
-            $migrations => $this->app->databasePath().'/migrations',
-        ], 'migrations');
+        // $this->publishes([
+        //     $migrations => $this->app->databasePath().'/migrations',
+        // ], 'migrations');
     }
 
     /**
