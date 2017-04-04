@@ -11,10 +11,10 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Sentinel
- * @version    2.0.13
+ * @version    2.0.15
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -31,7 +31,7 @@ use Cartalyst\Sentinel\Users\UserInterface;
 use Cartalyst\Sentinel\Users\UserRepositoryInterface;
 use Cartalyst\Support\Traits\EventTrait;
 use Closure;
-use Illuminate\Events\Dispatcher;
+use Illuminate\Contracts\Events\Dispatcher;
 use InvalidArgumentException;
 use RuntimeException;
 
@@ -130,7 +130,7 @@ class Sentinel
      * @param  \Cartalyst\Sentinel\Users\UserRepositoryInterface  $users
      * @param  \Cartalyst\Sentinel\Roles\RoleRepositoryInterface  $roles
      * @param  \Cartalyst\Sentinel\Activations\ActivationRepositoryInterface  $activations
-     * @param  \Illuminate\Events\Dispatcher  $dispatcher
+     * @param  \Illuminate\Contracts\Events\Dispatcher  $dispatcher
      * @return void
      */
     public function __construct(

@@ -11,6 +11,21 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v2.0.15 - 2017-02-23
+
+`REVISED`
+
+- Loosened `cartalyst/support` version.
+
+### v2.0.14 - 2017-01-30
+
+`FIXED`
+
+- Specify engine on the reminders table.
+- Single option on the native bootstrapper.
+- A bug causing `inRole` to return false after one iteration.
+- Use the event dispatcher contract.
+
 ### v2.0.13 - 2016-09-05
 
 `ADDED`

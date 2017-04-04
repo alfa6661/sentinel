@@ -11,10 +11,10 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Sentinel
- * @version    2.0.13
+ * @version    2.0.15
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -46,9 +46,10 @@ class IlluminateCookieTest extends PHPUnit_Framework_TestCase
 
     public function testGetWithQueuedCookie()
     {
-        $cookie = new IlluminateCookie($request = m::mock('Illuminate\Http\Request'), $jar = m::mock('Illuminate\Cookie\CookieJar'), 'foo');
-        $jar->shouldReceive('getQueuedCookies')->once()->andReturn(['foo' => 'bar']);
-        $this->assertEquals('bar', $cookie->get());
+        $illuminateCookie = new IlluminateCookie($request = m::mock('Illuminate\Http\Request'), $jar = m::mock('Illuminate\Cookie\CookieJar'), 'foo');
+        $jar->shouldReceive('getQueuedCookies')->once()->andReturn(['foo' => $cookie = m::mock('Symfony\Component\HttpFoundation\Cookie')]);
+        $cookie->shouldReceive('getValue')->andReturn('bar');
+        $this->assertEquals('bar', $illuminateCookie->get());
     }
 
     public function testGetWithPreviousCookies()
