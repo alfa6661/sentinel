@@ -100,6 +100,12 @@ class IlluminateUserRepository implements UserRepositoryInterface
 
         $query = $instance->newQuery();
 
+        if (is_array($credentials)) {
+            foreach ($credentials as $key => $value) {
+                $query->where($key, $value);
+            }
+        }
+
         if (is_array($logins)) {
             foreach ($logins as $key => $value) {
                 $query->where($key, $value);
