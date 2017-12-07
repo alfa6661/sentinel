@@ -18,29 +18,36 @@
  * @link       http://cartalyst.com
  */
 
-namespace Cartalyst\Sentinel\Hashing;
+namespace Cartalyst\Sentinel\Cookies;
 
-class Sha256Hasher implements HasherInterface
+class NullCookie implements CookieInterface
 {
-    use Hasher;
-
     /**
-     * {@inheritDoc}
+     * Put a value in the Sentinel cookie (to be stored until it's cleared).
+     *
+     * @param  mixed $value
+     * @return void
      */
-    public function hash($value)
+    public function put($value)
     {
-        $salt = $this->createSalt();
-
-        return $salt.hash('sha256', $salt.$value);
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Sentinel cookie value.
+     *
+     * @return mixed
      */
-    public function check($value, $hashedValue)
+    public function get()
     {
-        $salt = substr($hashedValue, 0, $this->saltLength);
+        return null;
+    }
 
-        return $this->slowEquals($salt.hash('sha256', $salt.$value), $hashedValue);
+    /**
+     * Remove the Sentinel cookie.
+     *
+     * @return void
+     */
+    public function forget()
+    {
     }
 }

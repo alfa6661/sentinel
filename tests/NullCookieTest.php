@@ -20,28 +20,26 @@
 
 namespace Cartalyst\Sentinel\tests;
 
-use Cartalyst\Sentinel\Cookies\NativeCookie;
-use Mockery as m;
+use Cartalyst\Sentinel\Cookies\NullCookie;
 use PHPUnit_Framework_TestCase;
 
-class NativeCookieTest extends PHPUnit_Framework_TestCase
+class NullCookieTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Close mockery.
-     *
-     * @return void
-     */
-    public function tearDown()
+    public function testPut()
     {
-        m::close();
+        $cookie = new NullCookie();
+        $this->assertNull($cookie->put('cookie'));
     }
 
     public function testGet()
     {
-        $cookie = new NativeCookie('__sentinel');
+        $cookie = new NullCookie();
         $this->assertNull($cookie->get());
+    }
 
-        $_COOKIE['__sentinel'] = json_encode('bar');
-        $this->assertEquals('bar', $cookie->get());
+    public function testForget()
+    {
+        $cookie = new NullCookie();
+        $this->assertNull($cookie->forget());
     }
 }

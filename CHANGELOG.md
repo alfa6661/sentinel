@@ -11,6 +11,26 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v2.0.17 - 2017-11-28
+
+`FIXED`
+
+- Incorrect docblock on the Illuminate Reminder Repositotry.
+
+`ADDED`
+
+- Null Cookie implementation.
+
+### v2.0.16 - 2017-10-09
+
+`FIXED`
+
+- Issue on `get` method on `IlluminateCookie` returning incorrect type.
+
+`ADDED`
+
+- Support for Laravel 5.5 Package Discovery.
+
 ### v2.0.15 - 2017-02-23
 
 `REVISED`
