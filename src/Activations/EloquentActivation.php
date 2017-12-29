@@ -20,7 +20,7 @@
 
 namespace Cartalyst\Sentinel\Activations;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class EloquentActivation extends Model implements ActivationInterface
 {

@@ -20,7 +20,7 @@
 
 namespace Cartalyst\Sentinel\Persistences;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class EloquentPersistence extends Model implements PersistenceInterface
 {

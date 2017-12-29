@@ -20,7 +20,7 @@
 
 namespace Cartalyst\Sentinel\Throttling;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class EloquentThrottle extends Model
 {

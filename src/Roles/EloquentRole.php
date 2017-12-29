@@ -22,7 +22,7 @@ namespace Cartalyst\Sentinel\Roles;
 
 use Cartalyst\Sentinel\Permissions\PermissibleInterface;
 use Cartalyst\Sentinel\Permissions\PermissibleTrait;
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class EloquentRole extends Model implements RoleInterface, PermissibleInterface
 {

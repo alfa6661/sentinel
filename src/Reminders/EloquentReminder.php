@@ -20,7 +20,7 @@
 
 namespace Cartalyst\Sentinel\Reminders;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class EloquentReminder extends Model
 {
